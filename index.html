@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skye — Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background orbs -->
+  <div class="bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon">☁</span>
+        <span class="brand-name">Skye</span>
+      </div>
+      <p class="brand-tagline">your personal weather companion</p>
+    </header>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Search city..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="searchBtn">Go</button>
+      </div>
+      <p class="search-hint" id="searchHint">Try "Hyderabad", "Tokyo", or "New York"</p>
+    </div>
+
+    <!-- Error -->
+    <div class="error-box" id="errorBox">
+      <span>⚠</span> <span id="errorMsg">City not found. Please try again.</span>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Fetching weather...</p>
+    </div>
+
+    <!-- Weather Card -->
+    <div class="card" id="weatherCard">
+
+      <!-- Top: Location + Date -->
+      <div class="card-top">
+        <div>
+          <h2 class="city-name" id="cityName">—</h2>
+          <p class="country" id="countryName">—</p>
+        </div>
+        <p class="date" id="dateToday">—</p>
+      </div>
+
+      <!-- Main Weather -->
+      <div class="card-main">
+        <div class="weather-icon-wrap">
+          <div class="weather-emoji" id="weatherEmoji">🌤</div>
+        </div>
+        <div class="temp-wrap">
+          <span class="temp" id="tempValue">—</span>
+          <span class="temp-unit">°C</span>
+        </div>
+        <p class="weather-desc" id="weatherDesc">—</p>
+        <p class="feels-like">Feels like <span id="feelsLike">—</span>°C</p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💧</div>
+          <div class="stat-info">
+            <span class="stat-value" id="humidity">—</span>
+            <span class="stat-label">Humidity</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌬</div>
+          <div class="stat-info">
+            <span class="stat-value" id="windSpeed">—</span>
+            <span class="stat-label">Wind</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👁</div>
+          <div class="stat-info">
+            <span class="stat-value" id="visibility">—</span>
+            <span class="stat-label">Visibility</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌡</div>
+          <div class="stat-info">
+            <span class="stat-value" id="pressure">—</span>
+            <span class="stat-label">Pressure</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌅</div>
+          <div class="stat-info">
+            <span class="stat-value" id="sunrise">—</span>
+            <span class="stat-label">Sunrise</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌇</div>
+          <div class="stat-info">
+            <span class="stat-value" id="sunset">—</span>
+            <span class="stat-label">Sunset</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Min / Max -->
+      <div class="minmax">
+        <div class="minmax-item">
+          <span class="minmax-label">↓ Min</span>
+          <span class="minmax-val" id="tempMin">—°C</span>
+        </div>
+        <div class="minmax-divider"></div>
+        <div class="minmax-item">
+          <span class="minmax-label">↑ Max</span>
+          <span class="minmax-val" id="tempMax">—°C</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      Powered by <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
