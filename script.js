@@ -3,7 +3,7 @@
 //  Get one free at: https://openweathermap.org/api
 //  It takes ~10 minutes to activate after signup.
 // ─────────────────────────────────────────────────────────────
-const API_KEY = "YOUR_API_KEY_HERE";
+const API_KEY = "5f51f2859572736a6f04663e31523cca";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 // ─── DOM Elements ─────────────────────────────────────────────
